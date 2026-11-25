@@ -16,6 +16,8 @@ import { LessonRenderer } from './components/LessonRenderer';
 import { PracticeToolbar } from './components/PracticeToolbar';
 import { PracticeLog } from './components/PracticeLog';
 import { StatsDashboard } from './components/StatsDashboard';
+import { PWAInstallButton } from './components/PWAInstallButton';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import {
   CompletedDatesStore,
   getTodayISO,
@@ -252,6 +254,8 @@ export default function App() {
                 <span className="hidden sm:inline">Estadísticas</span>
               </button>
 
+              <PWAInstallButton />
+
               <button
                 type="button"
                 onClick={() => setDarkMode((d) => !d)}
@@ -400,6 +404,9 @@ export default function App() {
           onBpmChange={setActiveMetronomeBpm}
         />
       </div>
+
+      {/* Offline Connectivity Indicator */}
+      <OfflineIndicator />
     </div>
   );
 }
